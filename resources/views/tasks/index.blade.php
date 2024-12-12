@@ -1,5 +1,3 @@
-<!-- resources/views/tasks/index.blade.php -->
-
 @extends('layouts.app')
 
 @section('content')
@@ -16,6 +14,12 @@
                         </div>
                     @endif
 
+                    <!-- Add New Task Button -->
+                    <div class="mb-3">
+                        <a href="{{ route('tasks.create') }}" class="btn btn-primary">{{ __('Add New Task') }}</a>
+                    </div>
+
+                    <!-- Task Table -->
                     <table class="table">
                         <thead>
                             <tr>

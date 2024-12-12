@@ -85,21 +85,4 @@
         </div>
     </div>
 </div>
-
-<!-- JavaScript to Redirect After Registration -->
-<script>
-    document.getElementById('registerForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
-
-        const email = document.getElementById('email').value;
-        const form = this;
-
-        // Simulate form submission and redirect
-        setTimeout(() => {
-            form.submit(); // Submit form normally
-            // Redirect to login page with pre-filled email
-            window.location.href = "{{ route('login') }}?email=" + encodeURIComponent(email);
-        }, 500);
-    });
-</script>
 @endsection
