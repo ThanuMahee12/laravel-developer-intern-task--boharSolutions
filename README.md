@@ -1,66 +1,123 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Developer Intern Task - Bohar Solutions
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This repository contains the completed task assigned for the Laravel Developer Intern position at Bohar Solutions. The project demonstrates proficiency in Laravel development, including setup, features implementation, and enabling push notifications.
 
-## About Laravel
+## Table of Contents
+- [Getting Started](#getting-started)
+- [Installation and Setup](#installation-and-setup)
+- [Git Workflow](#git-workflow)
+- [Enabling Push Notifications](#enabling-push-notifications)
+- [Features Implemented](#features-implemented)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Getting Started
+Follow the instructions below to set up and run the project locally.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Installation and Setup
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Prerequisites
+Make sure you have the following installed on your system:
+- PHP >= 8.0
+- Composer
+- Laravel >= 9.0
+- MySQL or any supported database
+- Node.js and npm (for frontend dependencies)
 
-## Learning Laravel
+### Steps
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/laravel-intern-task.git
+   cd laravel-intern-task
+   ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2. Install dependencies:
+   ```bash
+   composer install
+   npm install
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. Copy the `.env` file:
+   ```bash
+   cp .env.example .env
+   ```
 
-## Laravel Sponsors
+4. Set up environment variables in the `.env` file. Update database credentials and any necessary configurations:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=bohar_solutions_task
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+5. Generate the application key:
+   ```bash
+   php artisan key:generate
+   ```
 
-### Premium Partners
+6. Run migrations and seed the database:
+   ```bash
+   php artisan migrate --seed
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+7. Start the development server:
+   ```bash
+   php artisan serve
+   ```
 
-## Contributing
+8. Compile frontend assets (if applicable):
+   ```bash
+   npm run dev
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Git Workflow
 
-## Code of Conduct
+### Cloning the Repository
+1. Open your terminal and navigate to your desired directory.
+2. Run the following command:
+   ```bash
+   git clone https://github.com/ThanuMahee12/laravel-developer-intern-task--boharSolutions.git
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Pushing Changes
+1. Add your changes to the staging area:
+   ```bash
+   git add .
+   ```
+2. Commit your changes with a meaningful message:
+   ```bash
+   git commit -m "Your commit message"
+   ```
+3. Push your changes to the remote repository:
+   ```bash
+   git push origin main
+   ```
 
-## Security Vulnerabilities
+## Enabling Push Notifications
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+To enable push notifications in this Laravel project, follow the steps below:
 
-## License
+1. Install the required package for push notifications:
+   ```bash
+   composer require laravel-notification-channels/webpush
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. Add the following settings to your `.env` file:
+   ```env
+   VAPID_PUBLIC_KEY=your_public_key
+   VAPID_PRIVATE_KEY=your_private_key
+   VAPID_SUBJECT=mailto:your_email@example.com
+   ```
+
+3. Implement push notifications in your project by creating notifications using Laravel's notification system.
+
+## Features Implemented
+- User authentication (login, registration, password reset).
+- CRUD operations for [specific resource].
+- Push notifications for [specific event].
+- Responsive design for the user interface.
+
+---
+
+Thank you for reviewing my completed Laravel Developer Intern task! If you have any questions or need further clarification, feel free to reach out.
