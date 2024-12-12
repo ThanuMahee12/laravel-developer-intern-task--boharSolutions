@@ -22,7 +22,6 @@
                                 <th>{{ __('Title') }}</th>
                                 <th>{{ __('Description') }}</th>
                                 <th>{{ __('Created By') }}</th>
-                                <th>{{ __('Actions') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,22 +29,13 @@
                                 <tr>
                                     <td>
                                         @if ($task->user_id == Auth::id())
-                                            <a href="{{ route('tasks.edit', $task->id) }}">{{ $task->title }}</a>
+                                            <a class='text-black' href="{{ route('tasks.edit', $task->id) }}">{{ $task->title }}</a>
                                         @else
                                             {{ $task->title }}
                                         @endif
                                     </td>
                                     <td>{{ $task->description }}</td>
                                     <td>{{ $task->user->name }}</td>
-                                    <td>
-                                        @if ($task->user_id == Auth::id())
-                                            <form action="{{ route('tasks.destroy', $task->id) }}" method="POST" style="display:inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">{{ __('Delete') }}</button>
-                                            </form>
-                                        @endif
-                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
