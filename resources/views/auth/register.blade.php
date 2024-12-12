@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" id="registerForm">
                         @csrf
 
                         <div class="row mb-3">
@@ -69,9 +69,37 @@
                             </div>
                         </div>
                     </form>
+
+                    <div class="row mt-3">
+                        <div class="col-md-8 offset-md-4">
+                            <!-- Login Link -->
+                            @if (Route::has('login'))
+                                <a class="btn btn-link" href="{{ route('login') }}">
+                                    {{ __('Already have an account? Login') }}
+                                </a>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- JavaScript to Redirect After Registration -->
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const email = document.getElementById('email').value;
+        const form = this;
+
+        // Simulate form submission and redirect
+        setTimeout(() => {
+            form.submit(); // Submit form normally
+            // Redirect to login page with pre-filled email
+            window.location.href = "{{ route('login') }}?email=" + encodeURIComponent(email);
+        }, 500);
+    });
+</script>
 @endsection
