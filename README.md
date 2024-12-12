@@ -120,4 +120,9 @@ To enable push notifications in this Laravel project, follow the steps below:
 
 ---
 
+## Screenshots
+
+### Dashboard
+![Dashboard Screenshot](public\demo.png)
+
 Thank you for reviewing my completed Laravel Developer Intern task! If you have any questions or need further clarification, feel free to reach out.
